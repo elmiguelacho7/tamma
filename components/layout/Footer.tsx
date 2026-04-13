@@ -209,7 +209,7 @@ export function Footer() {
                       className="size-[19px] shrink-0 object-contain"
                       unoptimized
                     />
-                    <span className="text-base font-medium leading-normal text-[#010203] sm:whitespace-nowrap">
+                    <span className="min-w-0 text-pretty text-base font-medium leading-normal text-[#010203] sm:whitespace-nowrap">
                       +58 412-1903890
                     </span>
                   </a>
@@ -243,7 +243,7 @@ export function Footer() {
 
       {/* Full-bleed legal bar; inner row aligned to main content width */}
       <div
-        className="w-full shrink-0"
+        className="w-full shrink-0 border-t border-white/[0.12]"
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.62) 100%), linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(34, 34, 34) 100%)",
@@ -252,11 +252,11 @@ export function Footer() {
         <div
           className={cx(
             openSans.className,
-            "mx-auto flex w-full max-w-[1394px] min-w-0 flex-col items-stretch gap-3 px-4 py-3 text-white sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:px-10 sm:py-[10px] lg:px-[59px]",
+            "mx-auto flex w-full max-w-[1394px] min-w-0 flex-col items-stretch gap-4 px-4 py-4 text-white max-sm:gap-5 max-sm:py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:px-10 sm:py-[10px] lg:px-[59px]",
           )}
         >
           <p
-            className="whitespace-normal text-center text-[12px] leading-relaxed tracking-[0.06em] text-pretty sm:text-left sm:text-[13px] sm:leading-[1.5] sm:tracking-[0.78px]"
+            className="whitespace-normal text-center text-[12px] leading-[1.65] tracking-[0.05em] text-pretty sm:text-left sm:text-[13px] sm:leading-[1.5] sm:tracking-[0.78px]"
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             © {new Date().getFullYear()} —Todos los derechos reservados | Tamma Group –

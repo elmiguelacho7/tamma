@@ -16,7 +16,7 @@ function RowMedia({ src, title }: { src: string; title: string }) {
   return (
     <div
       className={cx(
-        "relative aspect-[730/328] w-full max-w-[730px] overflow-hidden rounded-[32px] border border-[#c5e1a5]/30 shadow-[0px_8px_10px_0px_rgba(0,0,0,0.1),0px_20px_25px_0px_rgba(0,0,0,0.1)]",
+        "relative aspect-[730/328] w-full min-w-0 max-w-[730px] overflow-hidden rounded-[32px] border border-[#c5e1a5]/30 shadow-[0px_8px_10px_0px_rgba(0,0,0,0.1),0px_20px_25px_0px_rgba(0,0,0,0.1)]",
         "lg:max-w-none lg:shrink-0 lg:basis-[730px]",
       )}
     >
@@ -60,15 +60,18 @@ const rows: readonly Row[] = [
  */
 export function SegurosShowcase() {
   return (
-    <section className="bg-white" aria-labelledby="seguros-showcase-heading">
-      <div className={publicLayout.marketingFigmaBody}>
+    <section
+      className="min-w-0 overflow-x-clip bg-white"
+      aria-labelledby="seguros-showcase-heading"
+    >
+      <div className={cx(publicLayout.marketingFigmaBody, "min-w-0")}>
         <header
           className={cx(
             publicLayout.segurosShowcaseIntroBand,
             "w-full text-left",
           )}
         >
-          <div className="mx-auto flex w-full max-w-[1480px] flex-col gap-[24px]">
+          <div className="mx-auto flex w-full min-w-0 max-w-[1480px] flex-col gap-[24px]">
             <h2
               id="seguros-showcase-heading"
               className="text-balance text-3xl font-bold leading-tight tracking-tight text-[#1b5e20] sm:text-4xl lg:text-[48px] lg:leading-[normal]"
@@ -84,7 +87,7 @@ export function SegurosShowcase() {
 
         <div
           className={cx(
-            "pb-20 sm:pb-24 lg:pb-28",
+            "pb-24 sm:pb-28 lg:pb-28",
             "flex min-w-0 flex-col",
             publicLayout.segurosShowcaseRowStackGap,
           )}
@@ -96,21 +99,21 @@ export function SegurosShowcase() {
                 key={row.id}
                 id={row.id}
                 className={cx(
-                  "grid gap-8 py-6 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-16",
+                  "grid min-w-0 gap-8 py-7 sm:gap-10 sm:py-8 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-6",
                   reversed && "lg:[&>*:first-child]:order-2",
                 )}
               >
                 <RowMedia src={row.imageSrc} title={row.title} />
-                <div className="flex min-w-0 flex-col gap-6 lg:flex-1">
-                  <div className="flex flex-col gap-3 lg:gap-[12px]">
+                <div className="flex min-w-0 flex-col gap-8 lg:flex-1 lg:gap-6">
+                  <div className="flex flex-col gap-4 lg:gap-[12px]">
                     <h3 className="text-balance text-2xl font-bold tracking-tight text-[#1b5e20] sm:text-3xl lg:text-[32px]">
                       {row.title}
                     </h3>
-                    <p className="text-base leading-normal text-[#01151a] sm:text-lg">
+                    <p className="text-pretty text-[15px] leading-[1.65] text-[#01151a] sm:text-base sm:leading-relaxed lg:text-lg lg:leading-normal">
                       {row.body}
                     </p>
                   </div>
-                  <div>
+                  <div className="max-lg:border-t max-lg:border-[#c5e1a5]/35 max-lg:pt-5">
                     <PrimaryButton
                       href="/contacto"
                       className="min-h-0 rounded-[96px] border-0 !bg-transparent px-6 py-4 text-base font-bold text-[#f6f6f6] shadow-none hover:!bg-transparent hover:opacity-95 active:opacity-90"

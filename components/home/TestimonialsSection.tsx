@@ -70,12 +70,17 @@ export type TestimonialsSectionProps = {
    * `nosotrosFlush` / `publicFlush`: same handoff — CTA → testimonials → Figma contact (tokenized flush).
    */
   verticalSpacing?: "homeSofterTop" | "nosotrosFlush" | "publicFlush";
+  /**
+   * Narrow-viewport rail comfort (padding + quote rhythm). Home + `/seguros` pass this; other routes omit.
+   */
+  railComfort?: boolean;
 };
 
 export function TestimonialsSection({
   verticalSpacing = "homeSofterTop",
   presentation: _presentation,
   subtitle: _subtitle,
+  railComfort = false,
 }: TestimonialsSectionProps) {
   const isHandoffFlush =
     verticalSpacing === "nosotrosFlush" || verticalSpacing === "publicFlush";
@@ -91,7 +96,7 @@ export function TestimonialsSection({
         sectionPadding,
         isHandoffFlush
           ? publicLayout.introToContentFlush
-          : "gap-5 sm:gap-6 lg:gap-10",
+          : "gap-6 sm:gap-8 lg:gap-10",
       )}
     >
       <div
@@ -100,7 +105,12 @@ export function TestimonialsSection({
           "flex min-w-0 flex-col items-center",
         )}
       >
-        <header className={publicLayout.figmaHeadingStackCenter}>
+        <header
+          className={cx(
+            publicLayout.figmaHeadingStackCenter,
+            !isHandoffFlush && "gap-4 sm:gap-3.5 lg:gap-[12px]",
+          )}
+        >
           <h2
             className={cx(
               "w-full whitespace-pre-wrap text-[#1b5e20]",
@@ -112,7 +122,12 @@ export function TestimonialsSection({
               nuestros pacientes
             </span>
           </h2>
-          <p className={cx("w-full", publicHome.bodyLead)}>
+          <p
+            className={cx(
+              "w-full leading-relaxed sm:leading-normal",
+              publicHome.bodyLead,
+            )}
+          >
             Cientos de familias venezolanas confían diariamente en Tamma Group
             para su cuidado integral.
           </p>
@@ -126,6 +141,7 @@ export function TestimonialsSection({
           gapPx={20}
           className="w-full"
           tightFooter={isHandoffFlush}
+          railComfort={railComfort}
         />
       </div>
     </section>

@@ -92,11 +92,10 @@ export function BlogPreview() {
         className={cx(
           publicLayout.figmaContainer,
           publicLayout.figmaSectionPadding,
-          "flex min-w-0 flex-col",
-          publicLayout.figmaSectionGap,
+          "flex min-w-0 flex-col gap-7 sm:gap-8 lg:gap-10",
         )}
       >
-        <div className="flex min-w-0 flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div className="flex min-w-0 flex-col gap-7 sm:gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div
             className={cx(
               "flex min-h-px min-w-0 flex-[1_0_0] flex-col space-y-4 max-lg:contents",
@@ -114,7 +113,7 @@ export function BlogPreview() {
             </h2>
             <p
               className={cx(
-                "order-3 lg:order-none",
+                "order-3 leading-relaxed sm:leading-normal lg:order-none",
                 publicHome.bodyLead,
               )}
             >
@@ -127,9 +126,8 @@ export function BlogPreview() {
             className={cx(
               publicHome.ctaPillPrimary,
               "order-2 shrink-0 lg:order-none",
-              /* mt-2 (step 3) + micro mt-3 (step 4): merged to single margin-top — last wins */
-              "mt-2",
               publicHome.ctaPillPrimaryMicro,
+              "!mt-0",
             )}
             style={{
               backgroundImage:

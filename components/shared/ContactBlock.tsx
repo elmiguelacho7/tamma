@@ -20,11 +20,16 @@ export type ContactBlockProps = {
    * Nosotros `71:1607` / `68:1653`: stack flush under testimonials `84:1331` (no extra top band).
    */
   flushStackTop?: boolean;
+  /**
+   * Slightly wider vertical gaps on small viewports for touch/readability (`/seguros` polish).
+   */
+  touchComfort?: boolean;
 };
 
 export function ContactBlock({
   variant = "default",
   flushStackTop = false,
+  touchComfort = false,
 }: ContactBlockProps) {
   const home = variant === "homeFigma";
 
@@ -108,6 +113,7 @@ export function ContactBlock({
                     )
                   : publicLayout.figmaSectionPadding,
                 "flex flex-col gap-10 sm:gap-12 lg:gap-14",
+                touchComfort && "max-sm:gap-14",
               )
             : `${publicLayout.sectionInner} pt-20 pb-14 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20`,
         )}
@@ -119,7 +125,7 @@ export function ContactBlock({
               ? cx(
                   "flex max-w-[592px] flex-col max-sm:max-w-none",
                   publicLayout.figmaHeadingStack,
-                  "pb-5 lg:pb-6",
+                  touchComfort ? "pb-6 max-sm:pb-8 lg:pb-6" : "pb-5 lg:pb-6",
                 )
               : "max-w-2xl",
           )}
@@ -153,14 +159,22 @@ export function ContactBlock({
           className={cx(
             "grid sm:gap-10 lg:grid-cols-2",
             home
-              ? "gap-8 pb-6 lg:gap-10 lg:pb-8 lg:items-stretch"
+              ? cx(
+                  "gap-8 pb-6 lg:gap-10 lg:pb-8 lg:items-stretch",
+                  touchComfort && "max-sm:gap-12 max-sm:pb-10",
+                )
               : "gap-8 pb-4 lg:gap-12 lg:items-start lg:pb-6",
           )}
         >
           <div
             className={cx(
               "flex flex-col",
-              home ? "gap-3 sm:gap-4 lg:h-full lg:min-h-0" : "gap-4 sm:gap-5",
+              home
+                ? cx(
+                    "gap-3 sm:gap-4 lg:h-full lg:min-h-0",
+                    touchComfort && "max-sm:gap-5",
+                  )
+                : "gap-4 sm:gap-5",
             )}
           >
             <figure
@@ -304,7 +318,12 @@ export function ContactBlock({
             >
               <form
                 className={cx(
-                  home ? "space-y-6 sm:space-y-7" : "space-y-5 sm:space-y-6",
+                  home
+                    ? cx(
+                        "space-y-6 sm:space-y-7",
+                        touchComfort && "max-sm:space-y-8",
+                      )
+                    : "space-y-5 sm:space-y-6",
                 )}
                 noValidate
                 onSubmit={(e) => e.preventDefault()}

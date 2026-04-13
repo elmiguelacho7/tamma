@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex min-w-0 flex-col">
+    <div className="flex min-w-0 flex-col overflow-x-clip">
       <div className="relative">
         <Hero />
       </div>
@@ -41,7 +41,7 @@ export default function HomePage() {
         <CorporateSolutionsSection />
       </SectionReveal>
       <SectionReveal>
-        <TestimonialsSection />
+        <TestimonialsSection railComfort />
       </SectionReveal>
       <SectionReveal>
         <CTASection
@@ -56,7 +56,7 @@ export default function HomePage() {
         <FAQSection />
       </SectionReveal>
       <SectionReveal>
-        <ContactBlock variant="homeFigma" />
+        <ContactBlock variant="homeFigma" touchComfort />
       </SectionReveal>
     </div>
   );

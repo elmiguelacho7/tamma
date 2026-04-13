@@ -40,17 +40,17 @@ export function SegurosHero() {
           <div className="relative z-10 flex h-full min-h-0 w-full flex-col">
             <Header variant="heroOverlay" />
 
-            <div className="flex min-h-0 flex-1 flex-col justify-center px-4 pb-8 pt-2 sm:px-8 sm:pb-12 sm:pt-0 lg:px-[38px] lg:pb-14">
+            <div className="flex min-h-0 flex-1 flex-col justify-center px-4 pb-7 pt-2 sm:px-8 sm:pb-12 sm:pt-0 lg:px-[38px] lg:pb-14">
               <div
                 className={cx(
-                  "mx-auto flex w-full max-w-[1476px] flex-col items-start gap-5 sm:gap-6",
-                  "translate-y-4 lg:translate-y-[82px]",
+                  "mx-auto flex w-full min-w-0 max-w-[1476px] flex-col items-start gap-6 sm:gap-6",
+                  "max-lg:translate-y-0 lg:translate-y-[82px]",
                 )}
               >
-                <div className="flex flex-col gap-2.5 text-[#f6f6f6] sm:gap-3 lg:gap-[12px]">
+                <div className="flex min-w-0 flex-col gap-2.5 text-[#f6f6f6] sm:gap-3 lg:gap-[12px]">
                   <h1
                     id="seguros-hero-heading"
-                    className="flex flex-col gap-0 text-balance font-bold leading-[1.05] tracking-[-0.02em] text-[#f6f6f6] text-[1.875rem] sm:text-[2.5rem] lg:gap-0 lg:text-[64px] lg:leading-[normal]"
+                    className="flex min-w-0 flex-col gap-0 text-balance font-bold leading-[1.05] tracking-[-0.02em] text-[#f6f6f6] text-[1.875rem] sm:text-[2.5rem] lg:gap-0 lg:text-[64px] lg:leading-[normal]"
                   >
                     <span className="block leading-[1.05] lg:leading-normal">
                       Cobertura de seguros
@@ -59,7 +59,7 @@ export function SegurosHero() {
                       para tu tranquilidad
                     </span>
                   </h1>
-                  <p className="max-w-[988px] text-pretty text-base font-medium leading-normal text-[#f6f6f6] sm:text-lg lg:text-[18px]">
+                  <p className="max-w-[988px] text-pretty text-base font-medium leading-relaxed text-[#f6f6f6] sm:text-lg sm:leading-normal lg:text-[18px]">
                     Desde tu hogar hasta tu vehículo, accede a soluciones de seguros
                     diseñadas para brindarte respaldo, asistencia y tranquilidad en todo
                     momento.

@@ -37,10 +37,11 @@ export default function SegurosPage() {
           presentation="premium"
           verticalSpacing="publicFlush"
           subtitle="Cientos de familias venezolanas confían diariamente en Tamma Group para su cuidado integral."
+          railComfort
         />
       </SectionReveal>
       <SectionReveal>
-        <ContactBlock variant="homeFigma" flushStackTop />
+        <ContactBlock variant="homeFigma" flushStackTop touchComfort />
       </SectionReveal>
     </div>
   );

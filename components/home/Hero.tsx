@@ -15,11 +15,12 @@ const manrope = Manrope({
 const PRIMARY_CTA_BG =
   "linear-gradient(143.9390811546584deg, rgb(124, 179, 66) 13.419%, rgb(27, 94, 32) 130.46%)";
 
-const HERO_SHELL_MIN_H = "min-h-[min(780px,90svh)] lg:min-h-[780px]";
+const HERO_SHELL_MIN_H =
+  "min-h-[min(680px,88svh)] lg:min-h-[780px]";
 
 /**
  * Figma `56:2277` hero shell 1552×780 — floating strip `56:2349` horizontal placement.
- * Strip `top`: `max-lg: min(65%, calc(100% - 10rem))`, `lg+: ~81.15%` (633/780). Framed outer `max-lg:pb-28` reserves space before the intro band.
+ * Strip `top`: `max-lg: min(58%, calc(100% - 9rem))`, `lg+: ~81.15%` (633/780). Framed outer `max-lg:pb-[6.5rem]` reserves space before the intro band.
  */
 const STRIP_LEFT_FRAC = 232.5 / 1552;
 const STRIP_WIDTH_FRAC = 1284 / 1552;
@@ -39,7 +40,7 @@ export function Hero() {
           publicLayout.homeWideFramedOuter,
           "pt-4 sm:pt-5 lg:pt-6",
           /* Reserve space below the rounded shell on mobile before the intro band. */
-          "max-lg:pb-28",
+          "max-lg:pb-[6.5rem]",
         )}
       >
         <div
@@ -75,7 +76,7 @@ export function Hero() {
               className={cx(
                 manrope.className,
                 /* Figma `56:2281` y=212: below HEADER h=96 → margin-top 116px desktop */
-                "mt-8 flex w-full max-w-[958px] flex-1 flex-col gap-7 px-5 pb-[7rem] sm:mt-10 sm:px-7 sm:pb-24 lg:mt-[112px] lg:px-[36px] lg:pb-28",
+                "mt-8 flex w-full min-w-0 max-w-[958px] flex-1 flex-col gap-8 px-5 pb-[6.75rem] sm:mt-10 sm:px-7 sm:pb-24 lg:mt-[112px] lg:gap-7 lg:px-[36px] lg:pb-28",
               )}
             >
               <div className="flex flex-col gap-3.5 sm:gap-3">
@@ -92,14 +93,14 @@ export function Hero() {
                   </span>
                 </h1>
 
-                <p className="max-w-[958px] text-pretty text-[clamp(0.9375rem,2.8vw+0.4rem,1.125rem)] font-medium leading-normal text-[#f6f6f6] drop-shadow-[0_1px_14px_rgba(0,0,0,0.45)] sm:text-[18px]">
+                <p className="max-w-[958px] text-pretty text-[clamp(0.9375rem,2.8vw+0.4rem,1.125rem)] font-medium leading-relaxed text-[#f6f6f6] drop-shadow-[0_1px_14px_rgba(0,0,0,0.45)] sm:text-[18px] sm:leading-normal">
                   Accede a telemedicina inmediata, médicos a domicilio y tu farmacia
                   digital en un solo lugar. Cuidamos de ti y de tu familia con
                   tecnología smart y atención humana
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
+              <div className="flex flex-col gap-3.5 pt-1 sm:flex-row sm:gap-6 sm:pt-0">
                 <Link
                   href="/contacto"
                   className={cx(publicHome.ctaPillPrimaryOnPhoto, "!w-auto")}
@@ -122,7 +123,7 @@ export function Hero() {
             className={cx(
               "absolute right-auto z-30 lg:h-[129px]",
               /* Mobile: keep strip in upper-mid fold; lg+: Figma ~633/780 of 1552×780 shell. */
-              "top-[min(65%,calc(100%-10rem))] lg:top-[81.15384615%]",
+              "top-[min(58%,calc(100%-9rem))] lg:top-[81.15384615%]",
             )}
             style={{
               left: `${STRIP_LEFT_FRAC * 100}%`,
@@ -134,7 +135,7 @@ export function Hero() {
             href="https://wa.me/584121903890"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-40 right-3 top-auto z-20 block h-12 w-12 rounded-lg transition-opacity duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 active:opacity-80 sm:bottom-36 sm:right-4 lg:bottom-auto lg:right-4 lg:top-[569px]"
+            className="absolute bottom-44 right-3 top-auto z-20 block h-12 w-12 rounded-lg transition-opacity duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 active:opacity-80 sm:bottom-36 sm:right-4 lg:bottom-auto lg:right-4 lg:top-[569px]"
             aria-label="Contactar por WhatsApp"
           >
             <Image

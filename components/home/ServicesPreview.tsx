@@ -140,7 +140,7 @@ function ServicesRailPager({
 
 function FigmaServiceCard({ card }: { card: ServiceCard }) {
   return (
-    <article className="w-[min(365px,calc(100dvw-40px))] shrink-0 overflow-hidden rounded-[32px] bg-white shadow-[0px_2px_19px_0px_rgba(0,0,0,0.14)] transition-shadow duration-300 ease-out hover:shadow-[0px_8px_28px_-6px_rgba(0,0,0,0.16)] sm:w-[429px]">
+    <article className="w-[min(340px,calc(100dvw-48px))] shrink-0 overflow-hidden rounded-[32px] bg-white shadow-[0px_2px_19px_0px_rgba(0,0,0,0.14)] transition-shadow duration-300 ease-out hover:shadow-[0px_8px_28px_-6px_rgba(0,0,0,0.16)] sm:w-[429px]">
       <div className="relative h-[274px] w-full overflow-hidden">
         <Image
           src={card.imageSrc}
@@ -175,7 +175,7 @@ function FigmaServiceCard({ card }: { card: ServiceCard }) {
             <h3 className="w-full text-pretty text-[24px] font-bold leading-normal text-[#191c1b]">
               {card.title}
             </h3>
-            <p className="w-full text-pretty text-[16px] font-normal leading-normal text-[#424242]">
+            <p className="w-full text-pretty text-[16px] font-normal leading-relaxed text-[#424242] sm:leading-normal">
               {card.description}
             </p>
           </div>
@@ -406,7 +406,7 @@ export function ServicesPreview() {
               alt=""
               fill
               sizes="3021px"
-              className="object-cover opacity-75"
+              className="object-cover max-lg:opacity-50 lg:opacity-75"
               unoptimized
             />
           </div>
@@ -421,7 +421,7 @@ export function ServicesPreview() {
           publicLayout.figmaSectionGap,
         )}
       >
-        <header className="flex w-full flex-col gap-[12px] text-center leading-none">
+        <header className="flex w-full min-w-0 flex-col gap-3.5 text-center leading-none sm:gap-4">
           <h2 className={cx("w-full text-[#1b5e20]", publicHome.headingSection)}>
             <span className="text-[#1b5e20]">Servicios integrales </span>
             <span className={publicHome.headingAccentGreen}>especializados</span>
@@ -458,7 +458,7 @@ export function ServicesPreview() {
           ))}
         </div>
 
-        <div className="pt-0.5">
+        <div className="pt-2 sm:pt-1">
           <ServicesRailPager
             pageCount={pageCount}
             activePage={activePage}
@@ -467,7 +467,7 @@ export function ServicesPreview() {
           />
         </div>
 
-        <div className="flex w-full items-center justify-center">
+        <div className="flex w-full items-center justify-center pt-2 sm:pt-1">
           <Link href="/servicios" className={publicHome.ctaPillPrimary}
             style={{
               backgroundImage:

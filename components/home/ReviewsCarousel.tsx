@@ -36,6 +36,11 @@ type ReviewsCarouselProps = {
    * Default spacing unchanged for Home.
    */
   tightFooter?: boolean;
+  /**
+   * Slightly roomier cards + quote line-height on narrow viewports (Home + `/seguros`).
+   * Default false — other marketing routes omit.
+   */
+  railComfort?: boolean;
 };
 
 /** Min movement before a pointer gesture is treated as drag (not click). */
@@ -108,6 +113,7 @@ export function ReviewsCarousel({
   gapPx = 20,
   className,
   tightFooter = false,
+  railComfort = false,
 }: ReviewsCarouselProps) {
   const navId = useId();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -342,8 +348,17 @@ export function ReviewsCarousel({
           onPointerCancel={onRailPointerCancel}
           onClickCapture={onRailClickCapture}
           className={cx(
-            "flex min-w-0 flex-nowrap overflow-x-auto overscroll-x-contain scroll-pl-4 scroll-pr-4 outline-none [-webkit-overflow-scrolling:touch]",
-            tightFooter ? "pb-0" : "pb-3",
+            "flex min-w-0 flex-nowrap overflow-x-auto overscroll-x-contain outline-none [-webkit-overflow-scrolling:touch]",
+            railComfort
+              ? "scroll-pl-3 scroll-pr-5 sm:scroll-pl-4 sm:scroll-pr-4"
+              : "scroll-pl-4 scroll-pr-4",
+            tightFooter
+              ? railComfort
+                ? "pb-2"
+                : "pb-0"
+              : railComfort
+                ? "pb-4 sm:pb-3"
+                : "pb-3",
             "no-scrollbar touch-pan-x cursor-grab",
             publicHome.focusRingBrandSoft,
           )}
@@ -355,6 +370,8 @@ export function ReviewsCarousel({
               data-review-card={index}
               className={cx(
                 "w-[min(330px,calc(100dvw-40px))] shrink-0 rounded-[14.4px] border-[0.45px] border-solid border-[#3c3d42] p-[21.6px] transition-shadow duration-200 hover:shadow-[0_12px_32px_-14px_rgba(15,23,42,0.14)]",
+                railComfort &&
+                  "max-sm:w-[min(292px,calc(100dvw-52px))] max-sm:px-4 max-sm:py-5 sm:px-[21.6px] sm:py-[21.6px]",
                 "sm:w-[330px]",
               )}
               style={{
@@ -362,10 +379,27 @@ export function ReviewsCarousel({
                   "linear-gradient(139.77331271433974deg, rgb(255, 216, 247) 11.555%, rgb(255, 255, 255) 16.678%, rgb(255, 255, 255) 73.719%, rgb(214, 231, 255) 134.39%)",
               }}
             >
-              <div className="flex w-full items-center gap-[14.4px]">
-                <div className="relative size-[36px] shrink-0 overflow-hidden rounded-[36px]">
+              <div
+                className={cx(
+                  "flex w-full min-w-0 items-center gap-[14.4px]",
+                  railComfort && "max-sm:gap-2.5",
+                )}
+              >
+                <div
+                  className={cx(
+                    "relative shrink-0 overflow-hidden bg-[#811ea1]",
+                    railComfort
+                      ? "size-8 rounded-full sm:size-[36px] sm:rounded-[36px]"
+                      : "size-[36px] rounded-[36px]",
+                  )}
+                >
                   <div
-                    className="absolute inset-0 rounded-[36px] bg-[#811ea1]"
+                    className={cx(
+                      "absolute inset-0 bg-[#811ea1]",
+                      railComfort
+                        ? "rounded-full sm:rounded-[36px]"
+                        : "rounded-[36px]",
+                    )}
                     aria-hidden
                   />
                   {t.users[0] ? (
@@ -373,24 +407,50 @@ export function ReviewsCarousel({
                       src={t.users[0]}
                       alt=""
                       fill
-                      sizes="36px"
+                      sizes={railComfort ? "(max-width:639px) 32px, 36px" : "36px"}
                       className="object-cover"
                       draggable={false}
                       unoptimized
                     />
                   ) : null}
                 </div>
-                <div className="flex min-h-px min-w-px flex-[1_0_0] flex-col gap-[7.2px] not-italic">
-                  <p className="w-full text-[14.4px] font-semibold leading-[18px] text-[#1a1a1a]">
+                <div
+                  className={cx(
+                    "flex min-h-px min-w-px flex-[1_0_0] flex-col not-italic",
+                    railComfort ? "max-sm:gap-0.5 sm:gap-[7.2px]" : "gap-[7.2px]",
+                  )}
+                >
+                  <p
+                    className={cx(
+                      "w-full font-semibold text-[#1a1a1a]",
+                      railComfort
+                        ? "max-sm:text-[13px] max-sm:leading-tight sm:text-[14.4px] sm:leading-[18px]"
+                        : "text-[14.4px] leading-[18px]",
+                    )}
+                  >
                     {t.name}
                   </p>
-                  <p className="w-full text-[10.8px] font-normal leading-[13.5px] text-[rgba(0,0,0,0.5)]">
+                  <p
+                    className={cx(
+                      "w-full font-normal text-[rgba(0,0,0,0.5)]",
+                      railComfort
+                        ? "max-sm:text-[10px] max-sm:leading-3 sm:text-[10.8px] sm:leading-[13.5px]"
+                        : "text-[10.8px] leading-[13.5px]",
+                    )}
+                  >
                     {t.date}
                   </p>
                 </div>
               </div>
 
-              <div className="relative mt-[14.4px] h-[21.6px] w-[122.4px]">
+              <div
+                className={cx(
+                  "relative w-[122.4px]",
+                  railComfort
+                    ? "mt-2 h-[18px] sm:mt-[14.4px] sm:h-[21.6px]"
+                    : "mt-[14.4px] h-[21.6px]",
+                )}
+              >
                 <Image
                   src="/images/home/testimonials/rating.png"
                   alt=""
@@ -402,7 +462,14 @@ export function ReviewsCarousel({
                 />
               </div>
 
-              <p className="mt-[14.4px] w-full text-pretty text-[14.4px] font-normal leading-[18px] text-[#1a1a1a] not-italic">
+              <p
+                className={cx(
+                  "w-full min-w-0 text-pretty font-normal text-[#1a1a1a] not-italic",
+                  railComfort
+                    ? "mt-3 max-sm:mt-3 max-sm:text-[13.5px] max-sm:leading-snug sm:mt-[14.4px] sm:text-[14.4px] sm:leading-[18px]"
+                    : "mt-[14.4px] text-[14.4px] leading-[18px]",
+                )}
+              >
                 {t.quote}
               </p>
             </article>
@@ -417,8 +484,12 @@ export function ReviewsCarousel({
             ? cx(
                 publicLayout.carouselRailToPagerFlush,
                 publicLayout.carouselPagerBottomFlush,
+                railComfort && "max-sm:!pb-8",
               )
-            : publicLayout.carouselRailToPagerDefault,
+            : cx(
+                publicLayout.carouselRailToPagerDefault,
+                railComfort && "max-sm:mt-1",
+              ),
         )}
       >
         <ReviewsRailPager

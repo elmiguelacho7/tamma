@@ -11,14 +11,14 @@ const ICON_SMARTWATCH = "/images/home/icons/strip-icon-smartwatch.png";
  * backdrop blur 17px, fill rgba(246,246,246,0.4); three columns, icon above copy, 12px cell padding.
  */
 const cellClass = cx(
-  "flex w-full flex-col items-center gap-3 px-3 py-3 text-center sm:px-4 sm:py-3.5 lg:px-4 lg:py-4",
+  "flex w-full min-w-0 flex-col items-center gap-2.5 px-2.5 py-2.5 text-center sm:gap-3 sm:px-4 sm:py-3.5 lg:gap-3 lg:px-4 lg:py-4",
   "rounded-[24px] border-[#c5e1a5] border-[0.5px] border-solid bg-[rgba(246,246,246,0.38)] backdrop-blur-[16px] shadow-[0_2px_16px_rgba(62,69,69,0.11)]",
   "lg:min-w-0 lg:flex-1 lg:basis-0 lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none",
 );
 
 const textStackClass = "flex w-full flex-col gap-1";
 
-const iconBoxClass = "relative h-11 w-11 shrink-0 sm:h-12 sm:w-12";
+const iconBoxClass = "relative h-10 w-10 shrink-0 sm:h-12 sm:w-12";
 
 export function HeroFloatingStrip({
   className,
@@ -30,7 +30,7 @@ export function HeroFloatingStrip({
   return (
     <div
       className={cx(
-        "flex w-full flex-col gap-2.5",
+        "flex w-full min-w-0 max-w-full flex-col gap-2 sm:gap-2.5",
         "lg:flex-row lg:items-stretch lg:gap-0 lg:divide-x-[0.5px] lg:divide-[#c5e1a5] lg:overflow-hidden lg:rounded-[32px] lg:border-[0.5px] lg:border-[#c5e1a5] lg:bg-[rgba(246,246,246,0.4)] lg:py-0 lg:shadow-[0_2px_19px_rgba(62,69,69,0.12)] lg:backdrop-blur-[17px]",
         className,
       )}
