@@ -52,7 +52,8 @@ export function Hero() {
               priority
               fetchPriority="high"
               className="object-cover object-center"
-              sizes="100vw"
+              // Tighten srcset selection: hero is a framed surface (max ~1552px wide).
+              sizes="(min-width: 1580px) 1552px, 100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/28 to-black/10" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-black/15" />

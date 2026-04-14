@@ -43,6 +43,7 @@ export function HeroFloatingStrip({
             alt=""
             width={32}
             height={32}
+            loading="lazy"
             decoding="async"
             className="block h-full w-full object-contain"
           />
@@ -64,6 +65,7 @@ export function HeroFloatingStrip({
             alt=""
             width={32}
             height={32}
+            loading="lazy"
             decoding="async"
             className="block h-full w-full object-contain"
           />
@@ -85,6 +87,7 @@ export function HeroFloatingStrip({
             alt=""
             width={32}
             height={32}
+            loading="lazy"
             decoding="async"
             className="block h-full w-full object-contain"
           />

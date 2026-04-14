@@ -46,7 +46,6 @@ export function HeroHeader() {
             fill
             className="object-cover object-center opacity-[0.38]"
             sizes="100vw"
-            loading="eager"
             decoding="async"
           />
           <div
