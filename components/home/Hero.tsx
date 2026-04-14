@@ -46,13 +46,13 @@ export function Hero() {
         >
           <div className="pointer-events-none absolute inset-0" aria-hidden>
             <Image
-              src="/images/home/hero-bg.png"
+              src="/images/home/hero-bg.webp"
               alt=""
               fill
               priority
               fetchPriority="high"
               className="object-cover object-center"
-              sizes="(min-width: 1024px) min(1500px, 100vw), 100vw"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/28 to-black/10" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-black/15" />
@@ -139,7 +139,7 @@ export function Hero() {
             aria-label="Contactar por WhatsApp"
           >
             <Image
-              src="/images/home/whatsapp-float.png"
+              src="/images/home/whatsapp-float.webp"
               alt=""
               width={48}
               height={48}

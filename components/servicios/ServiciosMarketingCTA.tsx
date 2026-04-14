@@ -14,7 +14,7 @@ import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
  * **Figma-anchored vertical rhythm** (text block from ~143px, button from ~265px), and **ghost pill** (`ctaPillGhostOnPhoto`).
  * Forcing the shared band was a composition mismatch, not a density tweak.
  */
-const CTA_BG = "/images/home/cta-bienestar-bg.jpg";
+const CTA_BG = "/images/home/cta-bienestar-bg.webp";
 
 type ServiciosMarketingCTAProps = {
   subtitle: string;

@@ -11,7 +11,7 @@ import {
   cx,
 } from "@/components/ui/public-tokens";
 
-const OLAS_TAMMA = "/images/home/services/olas-tamma.png";
+const OLAS_TAMMA = "/images/home/services/olas-tamma.webp";
 
 export type ContactBlockProps = {
   /** HOME `68:1653`: #f6f6f6, OLAS, tipografía y rejilla alineadas al frame. */

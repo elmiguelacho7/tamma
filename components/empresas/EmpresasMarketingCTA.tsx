@@ -7,7 +7,7 @@ import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
  *
  * Classification: **Dedicated component** (per-route file) mirroring the shared geometry — **not** `CTASection` band.
  */
-const CTA_BG = "/images/home/cta-bienestar-bg.jpg";
+const CTA_BG = "/images/home/cta-bienestar-bg.webp";
 
 type EmpresasMarketingCTAProps = {
   subtitle: string;

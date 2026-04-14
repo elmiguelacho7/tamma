@@ -87,7 +87,7 @@ export function Footer() {
               aria-label="Marca y redes sociales"
             >
               <Image
-                src="/images/branding/footer-logo.png"
+                src="/images/branding/footer-logo.webp"
                 alt="Tamma Group"
                 width={158}
                 height={64}

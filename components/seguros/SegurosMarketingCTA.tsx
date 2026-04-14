@@ -6,7 +6,7 @@ import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
  * Same structural family as `ServiciosMarketingCTA` / frame `115:1462`: framed photo card, 55% black, split headline, ghost pill.
  * Dedicated component (not `CTASection` band) per route; copy differs only.
  */
-const CTA_BG = "/images/home/cta-bienestar-bg.jpg";
+const CTA_BG = "/images/home/cta-bienestar-bg.webp";
 
 type SegurosMarketingCTAProps = {
   subtitle: string;

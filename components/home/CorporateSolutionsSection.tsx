@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
 
-const CATALOGO_BG = "/images/home/corporativo-catalogo-bg.jpg";
+const CATALOGO_BG = "/images/home/corporativo-catalogo-bg.webp";
 
 /**
  * Figma HOME `162:1419` — CATALOGO: rounded photo band + “Soluciones de salud… para tu empresa”.

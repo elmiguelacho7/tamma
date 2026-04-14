@@ -14,9 +14,9 @@ const testimonials: ReviewCarouselItem[] = [
     quote:
       "“Excelente servicio, la atención por telemedicina fue rápida y muy clara. Me sentí acompañado en todo momento.”",
     users: [
-      "/images/home/testimonials/users/user-a.png",
-      "/images/home/testimonials/users/user-b.png",
-      "/images/home/testimonials/users/user-c.png",
+      "/images/home/testimonials/users/user-a.webp",
+      "/images/home/testimonials/users/user-b.webp",
+      "/images/home/testimonials/users/user-c.webp",
     ],
   },
   {
@@ -25,9 +25,9 @@ const testimonials: ReviewCarouselItem[] = [
     quote:
       "“Solicité asistencia médica a domicilio y llegaron súper rápido. Muy profesionales y atentos.”",
     users: [
-      "/images/home/testimonials/users/user-a.png",
-      "/images/home/testimonials/users/user-b.png",
-      "/images/home/testimonials/users/user-d.png",
+      "/images/home/testimonials/users/user-a.webp",
+      "/images/home/testimonials/users/user-b.webp",
+      "/images/home/testimonials/users/user-d.webp",
     ],
   },
   {
@@ -36,9 +36,9 @@ const testimonials: ReviewCarouselItem[] = [
     quote:
       "“Lo mejor es que tienen todo en un solo lugar: consultas, medicamentos y seguimiento. Muy cómodo.”",
     users: [
-      "/images/home/testimonials/users/user-a.png",
-      "/images/home/testimonials/users/user-b.png",
-      "/images/home/testimonials/users/user-e.png",
+      "/images/home/testimonials/users/user-a.webp",
+      "/images/home/testimonials/users/user-b.webp",
+      "/images/home/testimonials/users/user-e.webp",
     ],
   },
   {
@@ -47,9 +47,9 @@ const testimonials: ReviewCarouselItem[] = [
     quote:
       "“El servicio de ambulancia fue inmediato y el equipo muy preparado. Me dieron mucha tranquilidad.”",
     users: [
-      "/images/home/testimonials/users/user-b.png",
-      "/images/home/testimonials/users/user-e.png",
-      "/images/home/testimonials/users/user-a.png",
+      "/images/home/testimonials/users/user-b.webp",
+      "/images/home/testimonials/users/user-e.webp",
+      "/images/home/testimonials/users/user-a.webp",
     ],
   },
   {
@@ -57,7 +57,7 @@ const testimonials: ReviewCarouselItem[] = [
     date: "January 11, 2026",
     quote:
       "“La entrega de medicamentos fue rápida y sin complicaciones. Se nota la organización y calidad del servicio.”",
-    users: ["/images/home/testimonials/users/user-e.png"],
+    users: ["/images/home/testimonials/users/user-e.webp"],
   },
 ];
 

@@ -5,7 +5,7 @@ import { BlogPreviewCard } from "./BlogPreviewCard";
 /** HOME Sección blog — Figma `56:2660` (cuatro tarjetas 333px + copy). */
 const posts = [
   {
-    imageSrc: "/images/home/blog/preview-1.jpg",
+    imageSrc: "/images/home/blog/preview-1.webp",
     href: "/consejos",
     title: (
       <>
@@ -28,7 +28,7 @@ const posts = [
     excerptClassName: "text-[#3c3d42]",
   },
   {
-    imageSrc: "/images/home/blog/preview-2.jpg",
+    imageSrc: "/images/home/blog/preview-2.webp",
     href: "/consejos",
     title: <>Gestión de tratamientos crónicos a domicilio</>,
     excerpt: (
@@ -45,7 +45,7 @@ const posts = [
     excerptClassName: "text-[#3c3d42]",
   },
   {
-    imageSrc: "/images/home/blog/preview-3.jpg",
+    imageSrc: "/images/home/blog/preview-3.webp",
     href: "/consejos",
     title: (
       <>
@@ -68,7 +68,7 @@ const posts = [
     excerptClassName: "text-[#424939]",
   },
   {
-    imageSrc: "/images/home/blog/preview-4.jpg",
+    imageSrc: "/images/home/blog/preview-4.webp",
     href: "/consejos",
     title: <>Salud integral para cuidarte en tu día a día</>,
     excerpt: (

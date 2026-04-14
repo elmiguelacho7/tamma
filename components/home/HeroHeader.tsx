@@ -18,7 +18,7 @@ import { publicHome, cx } from "@/components/ui/public-tokens";
 
 const SCROLL_THRESHOLD_PX = 32;
 
-const HERO_HEADER_BG = "/images/home/hero-header-bg.png";
+const HERO_HEADER_BG = "/images/home/hero-header-bg.webp";
 
 export function HeroHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +44,7 @@ export function HeroHeader() {
             alt=""
             fill
             className="object-cover object-center opacity-[0.38]"
-            sizes="(min-width: 1024px) min(1552px, 100vw), 100vw"
+            sizes="100vw"
             loading="eager"
             decoding="async"
           />

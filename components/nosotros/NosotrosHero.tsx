@@ -43,7 +43,7 @@ export function NosotrosHero() {
               priority
               fetchPriority="high"
               className="object-cover object-center"
-              sizes="(min-width: 1024px) min(1500px, 100vw), 100vw"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/28 to-black/10" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/[0.32] via-black/10 to-black/12" />

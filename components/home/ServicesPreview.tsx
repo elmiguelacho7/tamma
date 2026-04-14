@@ -19,7 +19,7 @@ import {
 import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
 
 // Figma HOME services section — node `56:2379`
-const OLAS_TAMMA = "/images/home/services/olas-tamma.png";
+const OLAS_TAMMA = "/images/home/services/olas-tamma.webp";
 
 /** Matches `gap-[32px]` on the rail — used for stride math. */
 const SERVICES_RAIL_GAP_PX = 32;
@@ -54,35 +54,35 @@ const cards: ServiceCard[] = [
     title: "Telemedicina",
     description:
       "Accede a consultas telefónicas con orientación y soporte médico.",
-    imageSrc: "/images/home/services/card-telemedicina.jpg",
-    iconSrc: "/images/home/services/icons/telemedicina.png",
+    imageSrc: "/images/home/services/card-telemedicina.webp",
+    iconSrc: "/images/home/services/icons/telemedicina.webp",
   },
   {
     title: "Traslados en ambulancia",
     description: "Unidades UCI y básicas con respuesta en 10-20 min.",
-    imageSrc: "/images/home/services/card-ambulancia.jpg",
-    iconSrc: "/images/home/services/icons/ambulancia.png",
+    imageSrc: "/images/home/services/card-ambulancia.webp",
+    iconSrc: "/images/home/services/icons/ambulancia.webp",
   },
   {
     title: "Cadena de suministros de medicamentos",
     description:
       "Venta y entrega de medicamentos e insumos a nivel nacional.",
-    imageSrc: "/images/home/services/card-suministros.jpg",
-    iconSrc: "/images/home/services/icons/suministros.png",
+    imageSrc: "/images/home/services/card-suministros.webp",
+    iconSrc: "/images/home/services/icons/suministros.webp",
   },
   {
     title: "Asistencia medica domiciliaria (AMD)",
     description:
       "Enviamos un médico y paramédico al lugar para realizar una evaluación general.",
-    imageSrc: "/images/home/services/card-amd.jpg",
-    iconSrc: "/images/home/services/icons/suministros.png",
+    imageSrc: "/images/home/services/card-amd.webp",
+    iconSrc: "/images/home/services/icons/suministros.webp",
   },
   {
     title: "Atención clínica",
     description:
       "A través de nuestros aliados comerciales podemos ofrecer diversos servicios a nivel nacional.",
-    imageSrc: "/images/home/services/card-clinica.jpg",
-    iconSrc: "/images/home/services/icons/clinica.png",
+    imageSrc: "/images/home/services/card-clinica.webp",
+    iconSrc: "/images/home/services/icons/clinica.webp",
   },
 ] as const;
 

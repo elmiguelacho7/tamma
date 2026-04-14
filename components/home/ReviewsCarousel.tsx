@@ -452,7 +452,7 @@ export function ReviewsCarousel({
                 )}
               >
                 <Image
-                  src="/images/home/testimonials/rating.png"
+                  src="/images/home/testimonials/rating.webp"
                   alt=""
                   fill
                   sizes="122px"

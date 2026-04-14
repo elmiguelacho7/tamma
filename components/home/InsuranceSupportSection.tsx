@@ -7,32 +7,32 @@ const insuranceFeaturePill =
 
 // Figma HOME insurance/services support section — node `56:2601`
 const tiles = [
-  { src: "/images/home/insurance/tile-1.jpg", className: "col-1 row-1 ml-0 mt-0" },
-  { src: "/images/home/insurance/tile-2.jpg", className: "col-1 row-1 ml-0 mt-[215px]" },
-  { src: "/images/home/insurance/tile-3.jpg", className: "col-1 row-1 ml-[223px] mt-[250px]" },
-  { src: "/images/home/insurance/tile-4.jpg", className: "col-1 row-1 ml-[223px] mt-[35px]" },
+  { src: "/images/home/insurance/tile-1.webp", className: "col-1 row-1 ml-0 mt-0" },
+  { src: "/images/home/insurance/tile-2.webp", className: "col-1 row-1 ml-0 mt-[215px]" },
+  { src: "/images/home/insurance/tile-3.webp", className: "col-1 row-1 ml-[223px] mt-[250px]" },
+  { src: "/images/home/insurance/tile-4.webp", className: "col-1 row-1 ml-[223px] mt-[35px]" },
 ] as const;
 
 const features = [
   {
     title: "Plomería",
     text: "Reparamos filtraciones, roturas y fallas en tuberías con atención rápida y profesional.",
-    icon: "/images/home/insurance/icons/plomeria.png",
+    icon: "/images/home/insurance/icons/plomeria.webp",
   },
   {
     title: "Cerrajería",
     text: "Apertura y reparación de cerraduras ante pérdida, daño o bloqueo de acceso.",
-    icon: "/images/home/insurance/icons/cerrajeria.png",
+    icon: "/images/home/insurance/icons/cerrajeria.webp",
   },
   {
     title: "Electricidad",
     text: "Solucionamos fallas eléctricas en el hogar con atención rápida y segura.",
-    icon: "/images/home/insurance/icons/electricidad.png",
+    icon: "/images/home/insurance/icons/electricidad.webp",
   },
   {
     title: "Asistencia vial",
     text: "Asistencia inmediata en carretera ante fallas como batería, neumáticos o problemas eléctricos menores.",
-    icon: "/images/home/insurance/icons/asistencia-vial.png",
+    icon: "/images/home/insurance/icons/asistencia-vial.webp",
   },
 ] as const;
 

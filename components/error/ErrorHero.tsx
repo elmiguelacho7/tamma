@@ -61,7 +61,7 @@ export function ErrorHero() {
             priority
             fetchPriority="high"
             className="object-cover object-center"
-            sizes="(min-width: 1024px) min(1552px, 100vw), 100vw"
+            sizes="100vw"
           />
           <div
             className="absolute inset-0 bg-[linear-gradient(105deg,rgba(15,23,42,0.88)_0%,rgba(30,58,95,0.5)_38%,rgba(15,23,42,0.42)_72%,rgba(15,23,42,0.2)_100%)]"

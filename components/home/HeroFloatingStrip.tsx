@@ -2,9 +2,9 @@ import type { CSSProperties } from "react";
 import { cx } from "@/components/ui/public-tokens";
 
 /** Runtime paths — lowercase, no spaces (must match `public/images/home/icons/`). */
-const ICON_24H = "/images/home/icons/strip-icon-24h.png";
-const ICON_LOCATION = "/images/home/icons/strip-icon-location.png";
-const ICON_SMARTWATCH = "/images/home/icons/strip-icon-smartwatch.png";
+const ICON_24H = "/images/home/icons/strip-icon-24h.webp";
+const ICON_LOCATION = "/images/home/icons/strip-icon-location.webp";
+const ICON_SMARTWATCH = "/images/home/icons/strip-icon-smartwatch.webp";
 
 /**
  * HOME hero strip — Figma `56:2349`–`56:2365`: outer frame 1284×129, corner radius 32 (end columns),

@@ -35,7 +35,7 @@ const noiseSvg =
 /**
  * Mid-page CTA — dark photographic band + ghost button (home-full / nosotros reference).
  */
-const HOME_CTA_BG = "/images/home/cta-bienestar-bg.jpg";
+const HOME_CTA_BG = "/images/home/cta-bienestar-bg.webp";
 
 export function CTASection({
   subtitle = "Da el siguiente paso con un equipo que integra salud, tecnología y respaldo humano.",
