@@ -415,7 +415,7 @@ export function ServicesPreview() {
           publicLayout.figmaContainer,
           "relative z-10 flex min-w-0 flex-col",
           publicLayout.figmaSectionPadding,
-          "max-lg:pt-12",
+          "pt-16 sm:pt-14 lg:pt-[60px]",
           publicLayout.figmaSectionGap,
         )}
       >
@@ -466,7 +466,11 @@ export function ServicesPreview() {
         </div>
 
         <div className="flex w-full items-center justify-center pt-2 sm:pt-1">
-          <Link href="/servicios" className={publicHome.ctaPillPrimary}
+          <Link
+            href="/servicios"
+            className={publicHome.ctaPillPrimary}
+            data-ga-event="primary_cta_click"
+            data-ga-label="home_services_primary"
             style={{
               backgroundImage:
                 "linear-gradient(141.0879577466402deg, rgb(124, 179, 66) 13.419%, rgb(27, 94, 32) 130.46%)",

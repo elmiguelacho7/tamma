@@ -49,14 +49,14 @@ export function Header({
       <header
         className={cx(
           manrope.className,
-          "sticky top-0 z-50 w-full shrink-0 px-4 pt-4 sm:px-6 sm:pt-5",
+          "relative z-50 w-full shrink-0 px-4 pt-4 sm:px-6 sm:pt-5",
         )}
       >
         <div className="mx-auto w-full max-w-[1552px]">
           <div
             className={cx(
-              "flex w-full min-w-0 items-center justify-between gap-3 rounded-full border border-white/15 px-4 py-2.5 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.35)] backdrop-blur-[14px] sm:gap-6 sm:px-6 sm:py-3 md:px-7",
-              "bg-[#1e3a5f]/88",
+              "flex w-full min-w-0 items-center justify-between gap-3 rounded-full border border-white/20 px-4 py-2.5 shadow-[0_12px_40px_-12px_rgba(27,94,32,0.22)] backdrop-blur-[14px] sm:gap-6 sm:px-6 sm:py-3 md:px-7",
+              "bg-[linear-gradient(135deg,rgba(197,225,165,0.42)_0%,rgba(27,94,32,0.22)_60%,rgba(197,225,165,0.32)_100%)]",
             )}
           >
             <Link

@@ -1,8 +1,8 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
 import {
   getGaMeasurementId,
   isAnalyticsAllowed,
 } from "@/lib/analytics-config";
+import { GoogleAnalytics4 } from "@/components/analytics/GoogleAnalytics4";
 
 /**
  * Renders GA4 via @next/third-parties when allowed by env.
@@ -16,5 +16,5 @@ export function ConditionalGoogleAnalytics() {
   if (!gaId) {
     return null;
   }
-  return <GoogleAnalytics gaId={gaId} />;
+  return <GoogleAnalytics4 measurementId={gaId} />;
 }

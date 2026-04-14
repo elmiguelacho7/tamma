@@ -32,7 +32,7 @@ export function MobileNavigation({
                 "border-white/50 bg-white/10 text-white backdrop-blur-[4px]",
                 OVERLAY_CHROME_MOTION,
               )
-            : "border-slate-200 bg-white text-slate-800 hover:border-slate-300 hover:bg-slate-50 active:bg-slate-100/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
+            : "border-slate-200 bg-white text-slate-800 hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm active:bg-slate-100/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
         )}
         aria-label="Abrir menú de navegación"
       >

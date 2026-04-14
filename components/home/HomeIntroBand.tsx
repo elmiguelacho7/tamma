@@ -4,21 +4,21 @@ import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
 export function HomeIntroBand() {
   return (
     <section className="relative z-10 mt-0 w-full bg-white">
-      {/* Below hero framed outer (`max-lg:pb-28`); extra vertical rhythm is local padding/gaps only. */}
+      {/* Below hero framed outer (`pb-32 sm:pb-28`); extra vertical rhythm is local padding/gaps only. */}
       <div
         className={cx(
           publicLayout.figmaContainer,
-          "flex flex-col items-start gap-8 sm:gap-9 lg:flex-row lg:items-center lg:gap-[12px]",
-          "pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-[60px]",
+          "flex flex-col items-start gap-9 sm:gap-9 lg:flex-row lg:items-center lg:gap-[12px]",
+          "pt-14 pb-28 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-[60px]",
         )}
       >
-        <div className="flex min-h-px min-w-px flex-[1_0_0] flex-col gap-5 sm:gap-5 lg:gap-3">
+        <div className="flex min-h-px min-w-px flex-[1_0_0] flex-col gap-6 sm:gap-5 lg:gap-3">
           <h2 className={cx("w-full text-[#1b5e20]", publicHome.headingSection)}>
             Sistema integral diseñado para tu tranquilidad
           </h2>
           <p
             className={cx(
-              "w-full leading-relaxed sm:leading-normal",
+              "w-full leading-[1.7] sm:leading-normal",
               publicHome.bodyLead,
             )}
           >
@@ -34,6 +34,8 @@ export function HomeIntroBand() {
             publicHome.ctaPillPrimary,
             "w-full shrink-0 lg:w-auto",
           )}
+          data-ga-event="primary_cta_click"
+          data-ga-label="home_intro_primary"
           style={{
             backgroundImage:
               "linear-gradient(143.9390811546584deg, rgb(124, 179, 66) 13.419%, rgb(27, 94, 32) 130.46%)",

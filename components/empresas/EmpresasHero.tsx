@@ -16,10 +16,15 @@ import { publicLayout, cx } from "@/components/ui/public-tokens";
 export function EmpresasHero() {
   return (
     <section className="w-full bg-white" aria-label="Empresas — cabecera">
-      <div className={publicLayout.marketingRouteHeroOuter}>
+      <div
+        className={cx(
+          publicLayout.homeWideFramedOuter,
+          "pt-4 sm:pt-6",
+        )}
+      >
         <div
           className={cx(
-            "relative isolate mx-auto w-full max-w-[1552px] overflow-hidden rounded-t-[32px] rounded-b-[2rem] sm:rounded-b-[2.75rem] lg:rounded-b-[3.25rem]",
+            "relative isolate w-full overflow-hidden rounded-t-[32px] rounded-b-[2rem] sm:rounded-b-[2.75rem] lg:rounded-b-[3.25rem]",
             "min-h-[min(520px,78vh)] lg:h-[600px] lg:min-h-[600px]",
           )}
         >

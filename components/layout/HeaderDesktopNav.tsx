@@ -55,7 +55,7 @@ export function HeaderDesktopNav({
                 <span
                   className={cx(
                     "pointer-events-none absolute bottom-[-4px] left-0 right-0 h-[2px] w-full origin-center rounded-full",
-                    "transition-[opacity,transform] duration-[220ms] ease-out",
+                    "transition-[opacity,transform] duration-[220ms] ease-out will-change-transform transform-gpu",
                     active ? "scale-x-100 opacity-100" : "scale-x-75 opacity-0",
                     dark ? "bg-white" : "bg-[#4B7C38]",
                   )}

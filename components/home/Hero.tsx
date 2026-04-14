@@ -33,8 +33,8 @@ export function Hero() {
         className={cx(
           publicLayout.homeWideFramedOuter,
           "pt-4 sm:pt-5 lg:pt-6",
-          /* Reserve space below the rounded shell on mobile before the intro band. */
-          "max-lg:pb-28",
+          /* Keep the normal stack rhythm below the framed hero. */
+          "pb-10 sm:pb-0",
         )}
       >
         <div
@@ -100,12 +100,17 @@ export function Hero() {
                   href="/contacto"
                   className={cx(publicHome.ctaPillPrimaryOnPhoto, "!w-auto")}
                   style={{ backgroundImage: PRIMARY_CTA_BG }}
+                  data-ga-event="primary_cta_click"
+                  data-ga-label="home_hero_primary"
                 >
                   Solicitar atención médica
                 </Link>
                 <Link
                   href="/servicios"
-                  className={cx(publicHome.ctaPillGhostOnPhoto, "!w-auto")}
+                  className={cx(
+                    publicHome.ctaPillGhostOnPhoto,
+                    "!w-auto hidden sm:inline-flex",
+                  )}
                 >
                   Ir a smart pharmacy
                 </Link>
@@ -116,9 +121,9 @@ export function Hero() {
           {/* Floating strip — Figma `56:2349` in shell `56:2277` (1552×780), proportional + exact lg height. */}
           <HeroFloatingStrip
             className={cx(
-              "absolute right-auto z-30 lg:h-[129px]",
-              /* Mobile: keep strip in upper-mid fold; lg+: Figma ~633/780 of 1552×780 shell. */
-              "top-[min(34%,calc(100%-19rem))] sm:top-[min(40%,calc(100%-23rem))] lg:top-[81.15384615%]",
+              "hidden absolute right-auto z-30 sm:flex lg:h-[129px]",
+              /* sm+: keep strip in upper-mid fold; lg+: Figma ~633/780 of 1552×780 shell. */
+              "sm:top-[min(38%,calc(100%-22rem))] lg:top-[81.15384615%]",
             )}
             style={{
               left: `${STRIP_LEFT_FRAC * 100}%`,
@@ -130,7 +135,7 @@ export function Hero() {
             href="https://wa.me/584121903890"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-[27rem] right-3 top-auto z-20 block h-12 w-12 rounded-lg transition-opacity duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 active:opacity-80 max-lg:z-40 sm:bottom-36 sm:right-4 lg:bottom-auto lg:z-20 lg:right-4 lg:top-[569px]"
+            className="absolute bottom-6 right-3 top-auto z-20 block h-12 w-12 rounded-lg transition-opacity duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 active:opacity-80 max-lg:z-40 sm:bottom-36 sm:right-4 lg:bottom-auto lg:z-20 lg:right-4 lg:top-[569px]"
             aria-label="Contactar por WhatsApp"
           >
             <Image
@@ -142,6 +147,11 @@ export function Hero() {
               unoptimized
             />
           </a>
+        </div>
+
+        {/* Mobile benefits — same content as floating strip, but in normal flow (no overlay). */}
+        <div className="mt-4 sm:hidden">
+          <HeroFloatingStrip />
         </div>
       </div>
     </section>

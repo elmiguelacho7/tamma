@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Analytics (GA4)
+
+GA4 is loaded globally from `app/layout.tsx` via `components/analytics/ConditionalGoogleAnalytics.tsx`.
+
+- **Env var**: `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+  - If missing, analytics does **not** load.
+- **Consent-ready**: analytics is **consent-gated** by default.
+  - Set `localStorage.tamma_consent_analytics = "granted"` to enable GA locally.
+  - A future CMP/banner can call `window.tammaSetAnalyticsConsent("granted" | "denied")`.
+- **Privacy**: never send PII (no form fields, names, emails, phones, or message content). Keep events payload-free.
+
 ## Getting Started
 
 First, run the development server:
