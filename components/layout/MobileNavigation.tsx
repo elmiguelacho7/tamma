@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Menu } from "lucide-react";
 import {
   Dialog,
@@ -12,6 +11,7 @@ import {
 import { OVERLAY_CHROME_MOTION } from "@/components/layout/overlay-chrome-motion";
 import { publicUi, cx } from "@/components/ui/public-tokens";
 import { publicNavLinks } from "./nav-links";
+import { TransitionLink } from "@/components/motion/TransitionLink";
 
 type MobileNavigationProps = {
   overlay?: boolean;
@@ -54,19 +54,20 @@ export function MobileNavigation({
             {publicNavLinks.map(({ href, label }) => (
               <li key={href}>
                 <DialogClose asChild>
-                  <Link
+                  <TransitionLink
                     href={href}
                     className="flex min-h-[3rem] items-center rounded-xl px-3 py-3 text-base font-medium text-slate-800 transition-[background-color,color] duration-200 ease-out hover:bg-slate-50 active:bg-slate-100/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]"
+                    pressedClassName="opacity-85"
                   >
                     {label}
-                  </Link>
+                  </TransitionLink>
                 </DialogClose>
               </li>
             ))}
           </ul>
           <div className="mt-6 border-t border-slate-100 px-3 pt-4">
             <DialogClose asChild>
-              <Link
+              <TransitionLink
                 href="/contacto"
                 className={cx(
                   "flex w-full items-center justify-center text-center text-base font-bold transition-[opacity,background-color,border-color] duration-200 ease-out",
@@ -77,9 +78,10 @@ export function MobileNavigation({
                       )
                     : cx(publicUi.primaryButton, "w-full justify-center"),
                 )}
+                pressedClassName="opacity-90"
               >
                 Registrarse / iniciar sesión
-              </Link>
+              </TransitionLink>
             </DialogClose>
           </div>
         </nav>

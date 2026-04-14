@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { publicNavLinks } from "./nav-links";
 import { cx } from "@/components/ui/public-tokens";
+import { TransitionLink } from "@/components/motion/TransitionLink";
 
 type HeaderDesktopNavProps = {
   className?: string;
@@ -36,7 +36,7 @@ export function HeaderDesktopNav({
             pathname === href || pathname.startsWith(`${href}/`);
           return (
             <li key={href}>
-              <Link
+              <TransitionLink
                 href={href}
                 className={cx(
                   "relative inline-flex items-center justify-center text-base leading-normal whitespace-nowrap transition-colors duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
@@ -50,6 +50,7 @@ export function HeaderDesktopNav({
                         active && "text-[#0f172a]",
                       ),
                 )}
+                pressedClassName="opacity-85"
               >
                 {label}
                 <span
@@ -61,7 +62,7 @@ export function HeaderDesktopNav({
                   )}
                   aria-hidden
                 />
-              </Link>
+              </TransitionLink>
             </li>
           );
         })}
