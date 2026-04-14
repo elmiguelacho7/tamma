@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ComponentProps, MouseEvent, ReactNode } from "react";
 import { useRouter } from "next/navigation";
+import { flushSync } from "react-dom";
 
 type Props = {
   href: string;
@@ -58,7 +59,12 @@ export function TransitionLink({
           if (typeof anyDoc.startViewTransition === "function") {
             e.preventDefault();
             anyDoc.startViewTransition(() => {
-              router.push(href);
+              // Ensure React applies the route update synchronously so the View Transition
+              // can capture the "new" DOM in the same task. Without this, some mobile
+              // browsers can get stuck in a pending transition and appear frozen.
+              flushSync(() => {
+                router.push(href);
+              });
             });
             return;
           }
