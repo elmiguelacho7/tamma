@@ -76,9 +76,8 @@ export function ContactBlock({
                 src={OLAS_TAMMA}
                 alt=""
                 fill
-                sizes="3021px"
+                sizes="(max-width: 1023px) 100vw, min(1200px, 90vw)"
                 className="object-cover opacity-50"
-                unoptimized
               />
             </div>
           </div>

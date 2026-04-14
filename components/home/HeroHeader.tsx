@@ -9,18 +9,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Manrope } from "next/font/google";
 import { HeaderDesktopNav } from "@/components/layout/HeaderDesktopNav";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { OVERLAY_CHROME_MOTION } from "@/components/layout/overlay-chrome-motion";
 import { HEADER_LOGO_LIGHT } from "@/components/layout/header-assets";
+import { manrope } from "@/lib/fonts/manrope";
 import { publicHome, cx } from "@/components/ui/public-tokens";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-});
 
 const SCROLL_THRESHOLD_PX = 32;
 
@@ -31,7 +25,8 @@ export function HeroHeader() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > SCROLL_THRESHOLD_PX);
+      const next = window.scrollY > SCROLL_THRESHOLD_PX;
+      setScrolled((prev) => (prev === next ? prev : next));
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -49,12 +44,13 @@ export function HeroHeader() {
             alt=""
             fill
             className="object-cover object-center opacity-[0.38]"
-            sizes="(min-width: 1024px) 1552px, 100vw"
-            priority
+            sizes="(min-width: 1024px) min(1552px, 100vw), 100vw"
+            loading="eager"
+            decoding="async"
           />
           <div
             className={cx(
-              "absolute inset-0 backdrop-blur-[11px] transition-colors duration-200",
+              "absolute inset-0 max-lg:backdrop-blur-[8px] lg:backdrop-blur-[11px] transition-colors duration-200 ease-out",
               scrolled ? "bg-black/[0.07]" : "bg-black/[0.02]",
             )}
             aria-hidden
@@ -72,7 +68,6 @@ export function HeroHeader() {
               height={64}
               alt="Tamma Group"
               className="h-[3.5rem] w-auto sm:h-16 lg:h-16"
-              priority
               unoptimized
             />
           </Link>

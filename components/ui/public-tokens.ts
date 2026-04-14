@@ -65,7 +65,7 @@ export const publicLayout = {
     "w-full min-w-0 flex-1 max-w-full lg:max-w-[840px]",
   /** Footer / dense link rows — comfortable touch targets (≥44px) */
   footerLink:
-    "inline-flex min-h-11 items-center rounded-sm py-1 transition-colors duration-200",
+    "inline-flex min-h-11 items-center rounded-sm py-1 transition-colors duration-200 ease-out",
   /**
    * Footer — dark panel + compact legal strip.
    * Visual baseline: docs/design/home-full.jpg (full-bleed dark footer on reference home).
@@ -165,16 +165,16 @@ export const publicHome = {
   bodyLead: "text-[16px] font-medium leading-normal text-[#424242]",
   /** Primary pill on light background (gradient via inline `style`). */
   ctaPillPrimary:
-    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center rounded-[96px] px-6 py-4 text-center text-base font-bold leading-normal text-[#f6f6f6] transition-opacity duration-200 hover:opacity-[0.92] active:opacity-[0.86] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b5e20]/55 sm:w-auto",
+    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center rounded-[96px] px-6 py-4 text-center text-base font-bold leading-normal text-[#f6f6f6] transition-[opacity,box-shadow] duration-[220ms] ease-out hover:opacity-[0.92] hover:shadow-[0_6px_22px_-14px_rgba(27,94,32,0.35)] active:opacity-[0.86] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b5e20]/55 sm:w-auto",
   /** Primary pill on photography / dark overlay (same hit target, light focus ring). */
   ctaPillPrimaryOnPhoto:
-    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center rounded-[96px] px-6 py-4 text-center text-base font-bold leading-normal text-[#f6f6f6] transition-opacity duration-200 hover:opacity-[0.92] active:opacity-[0.86] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:w-auto",
+    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center rounded-[96px] px-6 py-4 text-center text-base font-bold leading-normal text-[#f6f6f6] transition-[opacity,box-shadow] duration-[220ms] ease-out hover:opacity-[0.92] hover:shadow-[0_8px_28px_-16px_rgba(0,0,0,0.35)] active:opacity-[0.86] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:w-auto",
   /**
    * Ghost / glass pill on photography or dark bands.
    * Used by `HeroHeader` (Home/Nosotros) and `Header` `variant="heroOverlay"`.
    */
   ctaPillGhostOnPhoto:
-    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center rounded-[96px] border border-solid border-[rgba(246,246,246,0.5)] bg-[rgba(197,225,165,0.15)] px-6 py-4 text-center text-base font-bold leading-normal text-[#f6f6f6] backdrop-blur-[17px] transition-colors duration-200 hover:bg-[rgba(197,225,165,0.24)] active:bg-[rgba(197,225,165,0.30)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:w-auto",
+    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center rounded-[96px] border border-solid border-[rgba(246,246,246,0.5)] bg-[rgba(197,225,165,0.15)] px-6 py-4 text-center text-base font-bold leading-normal text-[#f6f6f6] backdrop-blur-[17px] transition-[background-color,border-color,box-shadow] duration-200 ease-out hover:border-[rgba(246,246,246,0.62)] hover:bg-[rgba(197,225,165,0.24)] hover:shadow-[0_6px_24px_-14px_rgba(0,0,0,0.2)] active:bg-[rgba(197,225,165,0.30)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:w-auto",
   focusRingBrand:
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b5e20]/50",
   focusRingOnDark:
@@ -205,10 +205,10 @@ export const publicHome = {
     "transition-transform duration-200 ease-out group-hover:translate-x-[2px] group-hover:-translate-y-[2px] group-active:translate-x-0 group-active:translate-y-0",
   /** Shared pager segment sizing + transition (Services / Reviews carousels). */
   pagerSegmentTransition:
-    "shrink-0 rounded-[5px] transition-[width,height,background-color] duration-200",
+    "shrink-0 rounded-[5px] transition-[width,height,background-color] duration-200 ease-out",
   /** Carousel / icon circle controls on light backgrounds (pair with `focusOutlineBrand45`). */
   carouselNavButton:
-    "flex size-10 touch-manipulation items-center justify-center rounded-full border border-[#1b5e20]/25 bg-white/95 text-[#1b5e20] shadow-sm transition-colors duration-200 hover:bg-white hover:border-[#1b5e20]/35 active:bg-slate-50",
+    "flex size-10 touch-manipulation items-center justify-center rounded-full border border-[#1b5e20]/25 bg-white/95 text-[#1b5e20] shadow-sm transition-[background-color,border-color,box-shadow] duration-200 ease-out hover:bg-white hover:border-[#1b5e20]/35 hover:shadow-md active:bg-slate-50",
 } as const;
 
 /** Shared elevation for marketing cards (home + nosotros) — one shadow/ring language. */
@@ -236,15 +236,15 @@ export const publicBrand = {
 
 export const publicUi = {
   primaryButton:
-    "inline-flex min-h-[3.25rem] touch-manipulation items-center justify-center gap-2 rounded-full bg-[#4B7C38] px-8 text-base font-semibold text-white shadow-md shadow-[#4B7C38]/18 transition-colors duration-200 hover:bg-[#3d6630] active:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
+    "inline-flex min-h-[3.25rem] touch-manipulation items-center justify-center gap-2 rounded-full bg-[#4B7C38] px-8 text-base font-semibold text-white shadow-md shadow-[#4B7C38]/18 transition-[background-color,box-shadow,filter] duration-200 ease-out hover:bg-[#3d6630] hover:shadow-lg hover:shadow-[#4B7C38]/22 active:brightness-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
   secondaryButton:
-    "inline-flex min-h-[3.25rem] touch-manipulation items-center justify-center gap-2 rounded-full border border-slate-200/90 bg-white px-6 text-base font-semibold text-slate-800 shadow-sm transition-colors duration-200 hover:border-slate-300 hover:bg-slate-50 active:bg-slate-100/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
+    "inline-flex min-h-[3.25rem] touch-manipulation items-center justify-center gap-2 rounded-full border border-slate-200/90 bg-white px-6 text-base font-semibold text-slate-800 shadow-sm transition-[background-color,border-color,box-shadow] duration-200 ease-out hover:border-slate-300 hover:bg-slate-50 hover:shadow-md active:bg-slate-100/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
   secondaryButtonOnDark:
-    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center gap-2 rounded-full border-2 border-white/85 bg-transparent px-6 text-base font-semibold text-white shadow-none backdrop-blur-[2px] transition-colors duration-200 hover:bg-white/10 active:bg-white/15 sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+    "inline-flex min-h-[3.25rem] w-full touch-manipulation items-center justify-center gap-2 rounded-full border-2 border-white/85 bg-transparent px-6 text-base font-semibold text-white shadow-none backdrop-blur-[2px] transition-[background-color,border-color,box-shadow] duration-200 ease-out hover:border-white/95 hover:bg-white/10 hover:shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)] active:bg-white/15 sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
   secondaryLink:
-    "inline-flex min-h-[3.25rem] touch-manipulation items-center justify-center text-base font-semibold text-slate-700 underline-offset-4 transition-colors duration-200 hover:text-[#4B7C38] hover:underline focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
+    "inline-flex min-h-[3.25rem] touch-manipulation items-center justify-center text-base font-semibold text-slate-700 underline-offset-4 transition-colors duration-200 ease-out hover:text-[#4B7C38] hover:underline focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
   inlineTextCta:
-    "inline-flex items-center text-base font-semibold text-[#4B7C38] underline-offset-4 transition-colors duration-200 hover:text-[#3d6630] hover:underline focus-visible:rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
+    "inline-flex items-center text-base font-semibold text-[#4B7C38] underline-offset-4 transition-colors duration-200 ease-out hover:text-[#3d6630] hover:underline focus-visible:rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
   surfaceCard:
     "rounded-2xl bg-white shadow-[0_6px_28px_-10px_rgba(15,23,42,0.09)] ring-1 ring-slate-200/75",
   surfaceCardInteractive:

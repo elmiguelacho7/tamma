@@ -5,14 +5,9 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Manrope, Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
+import { manrope } from "@/lib/fonts/manrope";
 import { cx } from "@/components/ui/public-tokens";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["500", "700"],
-  display: "swap",
-});
 
 const openSans = Open_Sans({
   subsets: ["latin"],

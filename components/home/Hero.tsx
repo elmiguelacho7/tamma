@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Manrope } from "next/font/google";
 import { HeroHeader } from "@/components/home/HeroHeader";
 import { HeroFloatingStrip } from "@/components/home/HeroFloatingStrip";
+import { manrope } from "@/lib/fonts/manrope";
 import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
 
 /** Figma `56:2289` primary CTA fill. */
 const PRIMARY_CTA_BG =
@@ -20,7 +14,7 @@ const HERO_SHELL_MIN_H =
 
 /**
  * Figma `56:2277` hero shell 1552×780 — floating strip `56:2349` horizontal placement.
- * Strip `top`: `max-lg: min(58%, calc(100% - 9rem))`, `lg+: ~81.15%` (633/780). Framed outer `max-lg:pb-[6.5rem]` reserves space before the intro band.
+ * Strip `top`: `<sm` uses a tighter min() + shorter bottom reserve; `sm:max-lg` keeps the stacked strip inside the shell; `lg+: ~81.15%` (633/780). Framed outer `max-lg:pb-28` reserves space before the intro band.
  */
 const STRIP_LEFT_FRAC = 232.5 / 1552;
 const STRIP_WIDTH_FRAC = 1284 / 1552;
@@ -40,7 +34,7 @@ export function Hero() {
           publicLayout.homeWideFramedOuter,
           "pt-4 sm:pt-5 lg:pt-6",
           /* Reserve space below the rounded shell on mobile before the intro band. */
-          "max-lg:pb-[6.5rem]",
+          "max-lg:pb-28",
         )}
       >
         <div
@@ -56,8 +50,9 @@ export function Hero() {
               alt=""
               fill
               priority
+              fetchPriority="high"
               className="object-cover object-center"
-              sizes="(min-width: 1024px) 1500px, 100vw"
+              sizes="(min-width: 1024px) min(1500px, 100vw), 100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/28 to-black/10" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-black/15" />
@@ -123,7 +118,7 @@ export function Hero() {
             className={cx(
               "absolute right-auto z-30 lg:h-[129px]",
               /* Mobile: keep strip in upper-mid fold; lg+: Figma ~633/780 of 1552×780 shell. */
-              "top-[min(58%,calc(100%-9rem))] lg:top-[81.15384615%]",
+              "top-[min(34%,calc(100%-19rem))] sm:top-[min(40%,calc(100%-23rem))] lg:top-[81.15384615%]",
             )}
             style={{
               left: `${STRIP_LEFT_FRAC * 100}%`,
@@ -135,7 +130,7 @@ export function Hero() {
             href="https://wa.me/584121903890"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-44 right-3 top-auto z-20 block h-12 w-12 rounded-lg transition-opacity duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 active:opacity-80 sm:bottom-36 sm:right-4 lg:bottom-auto lg:right-4 lg:top-[569px]"
+            className="absolute bottom-[27rem] right-3 top-auto z-20 block h-12 w-12 rounded-lg transition-opacity duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 active:opacity-80 max-lg:z-40 sm:bottom-36 sm:right-4 lg:bottom-auto lg:z-20 lg:right-4 lg:top-[569px]"
             aria-label="Contactar por WhatsApp"
           >
             <Image

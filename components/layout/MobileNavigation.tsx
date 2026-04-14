@@ -26,13 +26,13 @@ export function MobileNavigation({
     <Dialog>
       <DialogTrigger
         className={cx(
-          "flex h-11 w-11 min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-full border border-solid transition-colors duration-200 lg:hidden",
+          "flex h-11 w-11 min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-full border border-solid transition-[background-color,border-color,box-shadow] duration-200 ease-out lg:hidden",
           overlay
             ? cx(
                 "border-white/50 bg-white/10 text-white backdrop-blur-[4px]",
                 OVERLAY_CHROME_MOTION,
               )
-            : "border-slate-200 bg-white text-slate-800 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
+            : "border-slate-200 bg-white text-slate-800 hover:border-slate-300 hover:bg-slate-50 active:bg-slate-100/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]",
         )}
         aria-label="Abrir menú de navegación"
       >
@@ -56,7 +56,7 @@ export function MobileNavigation({
                 <DialogClose asChild>
                   <Link
                     href={href}
-                    className="flex min-h-[3rem] items-center rounded-xl px-3 py-3 text-base font-medium text-slate-800 transition-colors duration-200 hover:bg-slate-50 active:bg-slate-100/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]"
+                    className="flex min-h-[3rem] items-center rounded-xl px-3 py-3 text-base font-medium text-slate-800 transition-[background-color,color] duration-200 ease-out hover:bg-slate-50 active:bg-slate-100/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38]"
                   >
                     {label}
                   </Link>
@@ -69,7 +69,7 @@ export function MobileNavigation({
               <Link
                 href="/contacto"
                 className={cx(
-                  "flex w-full items-center justify-center text-center text-base font-bold transition-opacity duration-200",
+                  "flex w-full items-center justify-center text-center text-base font-bold transition-[opacity,background-color,border-color] duration-200 ease-out",
                   overlay
                     ? cx(
                         "min-h-[3.25rem] rounded-full border border-white/50 bg-white/10 px-[24px] py-[16px] text-white backdrop-blur-[4px]",

@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import { FormularioB2BForm } from "@/components/formulario-b2b/FormularioB2BForm";
 import { Header } from "@/components/layout/Header";
+import { manrope } from "@/lib/fonts/manrope";
 import { publicLayout, cx } from "@/components/ui/public-tokens";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Formulario B2B",

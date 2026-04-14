@@ -25,8 +25,8 @@ export function SectionReveal({ children, className }: SectionRevealProps) {
       className={cx(className)}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.08, margin: "0px 0px -32px 0px" }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -24px 0px" }}
+      transition={{ duration: 0.42, ease: [0.25, 0.1, 0.25, 1] }}
     >
       {children}
     </motion.div>

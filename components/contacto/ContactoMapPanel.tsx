@@ -23,8 +23,7 @@ export function ContactoMapPanel() {
           alt="Mapa de ubicación de TAMMA Group en Caracas"
           fill
           className="object-cover object-center"
-          sizes="(min-width: 1024px) 45vw, 100vw"
-          priority
+          sizes="(min-width: 1024px) min(560px, 45vw), 100vw"
         />
       </div>
 

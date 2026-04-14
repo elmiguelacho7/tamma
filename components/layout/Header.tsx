@@ -20,18 +20,12 @@
  */
 import Image from "next/image";
 import Link from "next/link";
-import { Manrope } from "next/font/google";
 import { HEADER_LOGO_DARK, HEADER_LOGO_LIGHT } from "@/components/layout/header-assets";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { HeaderDesktopNav } from "@/components/layout/HeaderDesktopNav";
 import { OVERLAY_CHROME_MOTION } from "@/components/layout/overlay-chrome-motion";
+import { manrope } from "@/lib/fonts/manrope";
 import { cx, publicHome } from "@/components/ui/public-tokens";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-});
 
 export type HeaderProps = {
   variant?: "default" | "heroOverlay" | "contacto";
@@ -75,7 +69,6 @@ export function Header({
                 width={158}
                 height={64}
                 className="relative h-14 w-[140px] max-w-full sm:h-16 sm:w-[157.651px]"
-                priority
                 unoptimized
               />
             </Link>
@@ -100,7 +93,10 @@ export function Header({
           "relative z-30 w-full shrink-0 overflow-hidden rounded-t-[32px]",
         )}
       >
-        <div className="pointer-events-none absolute inset-0 bg-black/20 backdrop-blur-[17px]" aria-hidden />
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/20 max-lg:backdrop-blur-md lg:backdrop-blur-[17px]"
+          aria-hidden
+        />
         <div
           className={cx(
             "relative flex w-full min-h-0 min-w-0 items-center justify-between gap-3 px-4 py-3 sm:gap-6 sm:px-6 sm:py-4 lg:justify-start lg:gap-[40px] lg:px-[36px] lg:py-[16px]",
@@ -116,7 +112,6 @@ export function Header({
               width={158}
               height={64}
               className="relative h-14 w-[140px] max-w-full sm:h-16 sm:w-[157.651px]"
-              priority
               unoptimized
             />
           </Link>
@@ -150,7 +145,6 @@ export function Header({
             width={158}
             height={64}
             className="h-14 w-[140px] max-w-full sm:h-16 sm:w-[157.651px]"
-            priority
             unoptimized
           />
         </Link>
@@ -158,7 +152,7 @@ export function Header({
         <div className="flex shrink-0 items-center gap-2">
           <Link
             href="/contacto"
-            className="hidden rounded-[96px] border border-slate-300 bg-slate-50 px-6 py-4 text-base font-bold text-slate-800 sm:inline-flex"
+            className="hidden rounded-[96px] border border-slate-300 bg-slate-50 px-6 py-4 text-base font-bold text-slate-800 transition-[background-color,border-color,box-shadow] duration-200 ease-out hover:border-slate-400 hover:bg-slate-100/90 active:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4B7C38] sm:inline-flex"
           >
             Registrarse / iniciar sesión
           </Link>

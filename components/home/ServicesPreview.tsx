@@ -146,10 +146,9 @@ function FigmaServiceCard({ card }: { card: ServiceCard }) {
           src={card.imageSrc}
           alt=""
           fill
-          sizes="(min-width: 640px) 429px, 90vw"
+          sizes="(min-width: 640px) 429px, min(340px, calc(100dvw - 48px))"
           className="object-cover"
           draggable={false}
-          unoptimized
           priority={false}
         />
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)]" aria-hidden />
@@ -166,7 +165,6 @@ function FigmaServiceCard({ card }: { card: ServiceCard }) {
                 sizes="24px"
                 className="object-contain"
                 draggable={false}
-                unoptimized
               />
             </div>
           </div>
@@ -393,7 +391,7 @@ export function ServicesPreview() {
   );
 
   return (
-    <section className="relative isolate w-full min-w-0 overflow-x-clip bg-[#f6f6f6]">
+    <section className="relative isolate w-full min-w-0 overflow-x-clip overflow-y-clip bg-[#f6f6f6]">
       {/* OLAS TAMMA background — Figma `56:2380`; decorative only, z-0 so copy/CTA stay in flow above. */}
       <div
         className="pointer-events-none absolute left-[-957px] top-[-1076px] z-0 h-[3106.2px] w-[3595.547px]"
@@ -405,9 +403,8 @@ export function ServicesPreview() {
               src={OLAS_TAMMA}
               alt=""
               fill
-              sizes="3021px"
+              sizes="(max-width: 1023px) 100vw, min(1200px, 90vw)"
               className="object-cover max-lg:opacity-50 lg:opacity-75"
-              unoptimized
             />
           </div>
         </div>
@@ -418,10 +415,11 @@ export function ServicesPreview() {
           publicLayout.figmaContainer,
           "relative z-10 flex min-w-0 flex-col",
           publicLayout.figmaSectionPadding,
+          "max-lg:pt-12",
           publicLayout.figmaSectionGap,
         )}
       >
-        <header className="flex w-full min-w-0 flex-col gap-3.5 text-center leading-none sm:gap-4">
+        <header className="relative z-10 flex w-full min-w-0 flex-col gap-3.5 text-center leading-none sm:gap-4">
           <h2 className={cx("w-full text-[#1b5e20]", publicHome.headingSection)}>
             <span className="text-[#1b5e20]">Servicios integrales </span>
             <span className={publicHome.headingAccentGreen}>especializados</span>

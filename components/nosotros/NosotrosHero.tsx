@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Manrope } from "next/font/google";
 import { HeroHeader } from "@/components/home/HeroHeader";
+import { manrope } from "@/lib/fonts/manrope";
 import { publicHome, publicLayout, cx } from "@/components/ui/public-tokens";
 import { siteImages } from "@/lib/site-images";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
 
 /** Figma `71:1614` / `80:1261` — same gradient as Home hero CTA. */
 const PRIMARY_CTA_BG =
@@ -47,8 +41,9 @@ export function NosotrosHero() {
               alt=""
               fill
               priority
+              fetchPriority="high"
               className="object-cover object-center"
-              sizes="(min-width: 1024px) 1500px, 100vw"
+              sizes="(min-width: 1024px) min(1500px, 100vw), 100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/28 to-black/10" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/[0.32] via-black/10 to-black/12" />
