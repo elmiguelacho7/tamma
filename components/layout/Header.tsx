@@ -51,6 +51,7 @@ export function Header({
           manrope.className,
           "relative z-50 w-full shrink-0 px-4 pt-4 sm:px-6 sm:pt-5",
         )}
+        style={{ viewTransitionName: "public-header" } as any}
       >
         <div className="mx-auto w-full max-w-[1552px]">
           <div
@@ -92,6 +93,7 @@ export function Header({
           manrope.className,
           "relative z-30 w-full shrink-0 overflow-hidden rounded-t-[32px]",
         )}
+        style={{ viewTransitionName: "public-header" } as any}
       >
         <div
           className="pointer-events-none absolute inset-0 bg-black/20 max-lg:backdrop-blur-md lg:backdrop-blur-[17px]"
@@ -133,6 +135,7 @@ export function Header({
         manrope.className,
         "sticky top-0 z-50 border-b border-slate-200/80 bg-white",
       )}
+      style={{ viewTransitionName: "public-header" } as any}
     >
       <div className="mx-auto flex w-full max-w-[1552px] min-w-0 items-center justify-between gap-4 px-4 py-3.5 sm:gap-8 sm:px-6 sm:py-4 lg:gap-10 lg:px-9">
         <Link

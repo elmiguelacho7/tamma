@@ -26,6 +26,50 @@ body {
   /* No `overflow-x: clip` on html/body: it can create a scrollport that breaks `position: sticky` for headers. */
 }
 
+/*
+  Premium public-page transitions (native View Transitions when available).
+  Triggered by `TransitionLink` → `document.startViewTransition(...)`.
+  Keep subtle and fast; respect reduced motion.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(public-content) {
+    animation: tamma-fade-out 120ms ease-out both;
+  }
+  ::view-transition-new(public-content) {
+    animation: tamma-fade-in 180ms ease-out both;
+  }
+
+  /* Keep header visually stable during route changes (cross-fade). */
+  ::view-transition-old(public-header) {
+    animation: tamma-fade-out 120ms ease-out both;
+  }
+  ::view-transition-new(public-header) {
+    animation: tamma-fade-in 180ms ease-out both;
+  }
+}
+
+@keyframes tamma-fade-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes tamma-fade-out {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 /* Hide native scrollbars while keeping overflow scroll (e.g. horizontal rails). */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

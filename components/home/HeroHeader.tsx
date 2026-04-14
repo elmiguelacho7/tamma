@@ -36,6 +36,7 @@ export function HeroHeader() {
   return (
     <header
       className={cx(manrope.className, "relative z-20 w-full shrink-0")}
+      style={{ viewTransitionName: "public-header" } as any}
     >
       <div className="pointer-events-auto relative w-full overflow-hidden">
         <div className="absolute inset-0" aria-hidden>

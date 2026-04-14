@@ -17,7 +17,13 @@ export default function PublicLayout({
 }>) {
   return (
     <div className="flex min-h-full min-w-0 flex-col bg-slate-50">
-      <main id="public-main" className="flex w-full min-w-0 flex-1 flex-col">
+      <main
+        id="public-main"
+        className="flex w-full min-w-0 flex-1 flex-col"
+        // Enables native View Transitions (when triggered by `TransitionLink`) to treat
+        // public page content as one stable surface.
+        style={{ viewTransitionName: "public-content" } as any}
+      >
         <PublicRouteTransition>{children}</PublicRouteTransition>
       </main>
       <Footer />
